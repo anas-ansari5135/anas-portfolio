@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import {
     Mail,
     ArrowUp,
-    Heart,
 } from "lucide-react";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
