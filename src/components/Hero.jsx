@@ -113,7 +113,7 @@ const Hero = () => {
 
             <button className="px-8 py-4 rounded-full border border-white/20 hover:border-purple-500 text-white transition">
 
-              Download Resume
+              My Resume
 
             </button>
 
