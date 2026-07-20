@@ -25,6 +25,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleContact = () => {
+    setMenuOpen(false);
+
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <>
       <motion.nav
@@ -38,7 +47,9 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+
           {/* Logo */}
+
           <motion.h1
             whileHover={{ scale: 1.05 }}
             className="cursor-pointer text-2xl lg:text-3xl font-black tracking-wide bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent"
@@ -47,6 +58,7 @@ const Navbar = () => {
           </motion.h1>
 
           {/* Desktop Menu */}
+
           <ul className="hidden md:flex items-center gap-10">
             {navLinks.map((item) => (
               <li key={item.name}>
@@ -67,26 +79,31 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Contact Button */}
+          {/* Desktop Hire Me Button */}
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block px-6 py-3 rounded-full text-white text-sm font-semibold tracking-widest uppercase bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 shadow-lg shadow-purple-600/30"
+            onClick={handleContact}
+            className="hidden md:block px-6 py-3 rounded-full text-white text-sm font-semibold tracking-widest uppercase bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 shadow-lg shadow-purple-600/30 hover:shadow-purple-500/50 transition-all duration-300"
           >
             Hire Me
           </motion.button>
 
           {/* Mobile Menu Icon */}
+
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white"
           >
             {menuOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
+
         </div>
       </motion.nav>
 
       {/* Mobile Menu */}
+
       <motion.div
         initial={false}
         animate={{
@@ -99,6 +116,7 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex flex-col items-center py-8 gap-8">
+
           {navLinks.map((item) => (
             <li key={item.name}>
               <Link
@@ -114,9 +132,13 @@ const Navbar = () => {
             </li>
           ))}
 
-          <button className="mt-4 px-8 py-3 rounded-full text-white font-semibold tracking-widest uppercase bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500">
+          <button
+            onClick={handleContact}
+            className="mt-4 px-8 py-3 rounded-full text-white font-semibold tracking-widest uppercase bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500"
+          >
             Hire Me
           </button>
+
         </ul>
       </motion.div>
     </>

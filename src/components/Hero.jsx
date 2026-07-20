@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { ChevronDown } from "lucide-react";
+
 
 const Hero = () => {
   const handleContact = () => {
@@ -136,21 +136,7 @@ const Hero = () => {
 
       {/* ================= Scroll ================= */}
 
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{
-          repeat: Infinity,
-          duration: 1.5,
-        }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-500"
-      >
-        <span className="uppercase tracking-[5px] text-xs mb-1">
-          Scroll
-        </span>
-
-        <ChevronDown size={24} />
-      </motion.div>
-    </section>
+        </section>
   );
 };
 

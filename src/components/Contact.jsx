@@ -143,7 +143,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/anas-ansari5135"
+              href="https://www.linkedin.com/in/anas-ansari-6509013a7/"
               target="_blank"
               rel="noreferrer"
               className="w-14 h-14 rounded-full bg-white/10 hover:bg-blue-600 transition-all duration-300 hover:scale-110 flex items-center justify-center"
