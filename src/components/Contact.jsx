@@ -221,7 +221,7 @@ export default function Contact() {
               </p>
 
               <a
-                href="/MCA_ANAS_ANSARI.pdf"
+                href="/mca_anas_ansari.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105"
@@ -353,7 +353,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="/MCA_ANAS_ANSARI.pdf"
+              href="/mca_anas_ansari.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-white/10 bg-white/5 px-10 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10"
