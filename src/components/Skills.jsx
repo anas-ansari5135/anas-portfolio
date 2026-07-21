@@ -1,44 +1,109 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Sparkles,
+  Award,
+  Layers3,
+} from "lucide-react";
 import skills from "../data/skills";
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative bg-[#09090B] py-28 overflow-hidden"
+      className="relative overflow-hidden bg-[#09090B] py-32"
     >
-      {/* Background Glow */}
+      {/* Background */}
 
-      <div className="absolute -top-32 left-0 w-96 h-96 bg-purple-600/20 blur-[140px]" />
+      <div className="absolute inset-0 overflow-hidden">
 
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-pink-500/10 blur-[180px]" />
+        <div className="absolute -top-44 left-0 h-[450px] w-[450px] rounded-full bg-purple-600/20 blur-[170px]" />
 
-      <div className="max-w-7xl mx-auto px-6">
+        <div className="absolute bottom-0 right-0 h-[450px] w-[450px] rounded-full bg-pink-600/15 blur-[180px]" />
+
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Heading */}
 
-        <motion.h2
-          initial={{ opacity: 0, y: 70 }}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-6xl md:text-7xl font-black bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent"
+          className="text-center"
         >
-          My Skills
-        </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: .2 }}
+          <span className="uppercase tracking-[6px] text-purple-400 font-semibold">
+            Professional Skills
+          </span>
+
+          <h2 className="mt-5 text-5xl md:text-7xl lg:text-8xl font-black bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
+            Technologies I Use
+          </h2>
+
+          <p className="mt-8 max-w-3xl mx-auto text-lg text-gray-400 leading-8">
+            I enjoy building modern, scalable and high-performance
+            web applications using today's most powerful technologies
+            and development tools.
+          </p>
+
+        </motion.div>
+
+        {/* Top Stats */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-gray-400 mt-5 max-w-3xl mx-auto"
+          className="mt-20 grid gap-6 md:grid-cols-3"
         >
-          Technologies and tools I use to build modern,
-          scalable, secure and high-performance applications.
-        </motion.p>
 
-        {/* Skill Cards */}
+          <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+
+            <Sparkles className="text-purple-400" size={34} />
+
+            <h3 className="mt-6 text-4xl font-black text-white">
+              {skills.reduce((a, b) => a + b.skills.length, 0)}+
+            </h3>
+
+            <p className="mt-2 text-gray-400">
+              Technologies
+            </p>
+
+          </div>
+
+          <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+
+            <Layers3 className="text-pink-400" size={34} />
+
+            <h3 className="mt-6 text-4xl font-black text-white">
+              {skills.length}
+            </h3>
+
+            <p className="mt-2 text-gray-400">
+              Skill Categories
+            </p>
+
+          </div>
+
+          <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+
+            <Award className="text-orange-400" size={34} />
+
+            <h3 className="mt-6 text-4xl font-black text-white">
+              2026
+            </h3>
+
+            <p className="mt-2 text-gray-400">
+              Latest Technologies
+            </p>
+
+          </div>
+
+        </motion.div>
+
+        {/* Categories */}
 
         <div className="mt-20 space-y-10">
 
@@ -52,57 +117,48 @@ export default function Skills() {
                 key={group.category}
                 initial={{
                   opacity: 0,
-                  y: 80
+                  y: 80,
                 }}
                 whileInView={{
                   opacity: 1,
-                  y: 0
+                  y: 0,
+                }}
+                transition={{
+                  delay: index * 0.15,
                 }}
                 viewport={{ once: true }}
-                transition={{
-                  delay: index * .12,
-                  duration: .5
-                }}
                 whileHover={{
-                  y: -6
+                  y: -8,
                 }}
-                className="group relative overflow-hidden rounded-[36px]
-                border border-white/10
-                bg-white/[0.04]
-                backdrop-blur-xl
-                hover:border-purple-500/40
-                transition-all duration-500"
+                className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-purple-500/40 hover:shadow-[0_0_60px_rgba(168,85,247,.20)]"
               >
 
-                {/* Gradient Border */}
+                {/* Hover Gradient */}
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-purple-500/10 via-transparent to-pink-500/10" />
 
-                <div className="relative flex flex-col lg:flex-row items-center gap-10 p-10">
+                <div className="relative grid gap-10 p-8 lg:grid-cols-[320px_1fr] lg:p-12">
 
                   {/* Left */}
 
-                  <div className="lg:w-[30%]">
+                  <div>
 
                     <div
-                      className={`w-24 h-24 rounded-3xl bg-gradient-to-r ${group.color}
-                      flex items-center justify-center shadow-xl`}
+                      className={`flex h-24 w-24 items-center justify-center rounded-3xl bg-gradient-to-r ${group.color} shadow-xl`}
                     >
-
                       {Icon && (
                         <Icon
                           size={42}
                           className="text-white"
                         />
                       )}
-
                     </div>
 
-                    <h3 className="text-4xl font-bold text-white mt-8">
+                    <h3 className="mt-8 text-4xl font-black text-white">
                       {group.category}
                     </h3>
 
-                    <p className="text-gray-400 mt-5 leading-8">
+                    <p className="mt-5 text-gray-400 leading-8">
                       {group.description}
                     </p>
 
@@ -110,90 +166,91 @@ export default function Skills() {
 
                   {/* Right */}
 
-                  <div className="lg:w-[70%]">
+                  <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
 
-                    <div className="flex flex-wrap gap-4">
+                    {group.skills.map((skill, i) => (
 
-                      {group.skills.map((skill, i) => (
+                      <motion.div
+                        key={skill.name}
+                        initial={{
+                          opacity: 0,
+                          scale: .85,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          scale: 1,
+                        }}
+                        transition={{
+                          delay: i * .05,
+                        }}
+                        viewport={{ once: true }}
+                        whileHover={{
+                          y: -6,
+                        }}
+                        className="group/skill rounded-3xl border border-white/10 bg-[#111111] p-6 transition-all duration-300 hover:border-purple-500 hover:bg-[#181818]"
+                      >
 
-                        <motion.div
-                          key={skill.name}
-                          initial={{
-                            opacity: 0,
-                            scale: .8
-                          }}
-                          whileInView={{
-                            opacity: 1,
-                            scale: 1
-                          }}
-                          transition={{
-                            delay: i * .05
-                          }}
-                          viewport={{ once: true }}
-                          whileHover={{
-                            scale: 1.08
-                          }}
-                          className="group/skill px-5 py-4
-                          rounded-2xl
-                          bg-white/5
-                          border border-white/10
-                          hover:border-purple-500
-                          transition-all duration-300
-                          min-w-[170px]"
-                        >
+                        <div className="flex items-center justify-between">
 
-                          <div className="flex items-center justify-between">
+                          <h4 className="font-semibold text-white">
+                            {skill.name}
+                          </h4>
 
-                            <span className="text-white font-medium">
-                              {skill.name}
-                            </span>
+                          <ArrowUpRight
+                            size={18}
+                            className="text-purple-400 transition duration-300 group-hover/skill:translate-x-1 group-hover/skill:-translate-y-1"
+                          />
 
-                            <ArrowUpRight
-                              size={18}
-                              className="text-purple-400
-                              group-hover/skill:translate-x-1
-                              group-hover/skill:-translate-y-1
-                              duration-300"
-                            />
+                        </div>
 
-                          </div>
+                        <div className="mt-6 h-2 overflow-hidden rounded-full bg-white/10">
 
-                          <div className="mt-4 h-2 rounded-full bg-white/10 overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{
+                              width: `${skill.level}%`,
+                            }}
+                            transition={{
+                              duration: 1,
+                            }}
+                            viewport={{ once: true }}
+                            className={`h-full rounded-full bg-gradient-to-r ${group.color}`}
+                          />
 
-                            <motion.div
-                              initial={{
-                                width: 0
-                              }}
-                              whileInView={{
-                                width: `${skill.level}%`
-                              }}
-                              transition={{
-                                duration: 1
-                              }}
-                              viewport={{ once: true }}
-                              className={`h-full rounded-full bg-gradient-to-r ${group.color}`}
-                            />
+                        </div>
 
-                          </div>
+                        <div className="mt-4 flex items-center justify-between">
 
-                          <div className="mt-3 flex justify-between">
+                          <span className="text-sm text-gray-500">
+                            Proficiency
+                          </span>
 
-                            <span className="text-xs text-gray-500">
-                              Proficiency
-                            </span>
+                          <span className="font-semibold text-purple-400">
+                            {skill.level}%
+                          </span>
 
-                            <span className="text-sm text-purple-400 font-semibold">
-                              {skill.level}%
-                            </span>
+                        </div>
 
-                          </div>
+                        {/* Continue in Part 2 */}
+                                                <div className="mt-6 flex flex-wrap gap-2">
 
-                        </motion.div>
+                          <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
+                            Responsive
+                          </span>
 
-                      ))}
+                          <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
+                            Modern
+                          </span>
 
-                    </div>
+                          <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
+                            Optimized
+                          </span>
 
+                        </div>
+
+                      </motion.div>
+
+                    ))}
 
                   </div>
 
@@ -207,80 +264,26 @@ export default function Skills() {
 
         </div>
 
-        {/* Bottom Stats */}
+    
 
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: .2 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-4 gap-6 mt-24"
-        >
+        {/* CTA Section */}
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 text-center hover:border-purple-500/40 transition">
-
-            <h3 className="text-5xl font-bold text-white">
-              20+
-            </h3>
-
-            <p className="text-gray-400 mt-3">
-              Technologies
-            </p>
-
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 text-center hover:border-purple-500/40 transition">
-
-            <h3 className="text-5xl font-bold text-white">
-              10+
-            </h3>
-
-            <p className="text-gray-400 mt-3">
-              Projects Built
-            </p>
-
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 text-center hover:border-purple-500/40 transition">
-
-            <h3 className="text-5xl font-bold text-white">
-              1+
-            </h3>
-
-            <p className="text-gray-400 mt-3">
-              Years Learning
-            </p>
-
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 text-center hover:border-purple-500/40 transition">
-
-            <h3 className="text-5xl font-bold text-white">
-              100%
-            </h3>
-
-            <p className="text-gray-400 mt-3">
-              Passion
-            </p>
-
-          </div>
-
-        </motion.div>
+  
 
       </div>
 
-      {/* Decorative Blobs */}
+      {/* Floating Background Blobs */}
 
       <motion.div
         animate={{
           y: [0, -30, 0],
-          x: [0, 20, 0],
+          x: [0, 25, 0],
         }}
         transition={{
-          duration: 10,
+          duration: 12,
           repeat: Infinity,
         }}
-        className="absolute top-32 right-16 w-56 h-56 rounded-full bg-purple-600/10 blur-[120px]"
+        className="absolute top-24 right-16 h-64 w-64 rounded-full bg-purple-600/10 blur-[150px]"
       />
 
       <motion.div
@@ -289,10 +292,10 @@ export default function Skills() {
           x: [0, -20, 0],
         }}
         transition={{
-          duration: 12,
+          duration: 14,
           repeat: Infinity,
         }}
-        className="absolute bottom-20 left-16 w-72 h-72 rounded-full bg-pink-500/10 blur-[150px]"
+        className="absolute bottom-20 left-16 h-72 w-72 rounded-full bg-pink-600/10 blur-[170px]"
       />
 
     </section>
