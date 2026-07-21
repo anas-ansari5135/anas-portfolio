@@ -124,7 +124,7 @@ const Hero = () => {
           </button>
 
           <a
-            href="/MCA_ANAS_ANSARI.pdf"
+            href="/mca_anas_ansari.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-full border border-white/20 hover:border-purple-500 hover:bg-white/5 text-white font-semibold duration-300"
@@ -133,8 +133,6 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
-
-      {/* ================= Scroll ================= */}
 
         </section>
   );
